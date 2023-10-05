@@ -7,16 +7,6 @@ class maindart2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-          ),
-        ),
-      ),
       home: Scaffold(
         appBar: AppBar(
           title: null,

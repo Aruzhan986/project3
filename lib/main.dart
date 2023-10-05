@@ -9,16 +9,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-          ),
-        ),
-      ),
       home: HomeScreen(),
     );
   }
@@ -35,13 +25,20 @@ class HomeScreen extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const maindart2()),
+                );
               },
               child: Text('Yes'),
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const maindart2()),
+                );
+                ;
               },
               child: Text('No'),
             ),
@@ -66,16 +63,6 @@ class HomeScreen extends StatelessWidget {
                 _showDialog(context);
               },
               child: Text('Vote'),
-            ),
-            const SizedBox(height: 10.0),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const maindart2()),
-                );
-              },
-              child: const Text('Следующая страница'),
             ),
           ],
         ),

@@ -7,19 +7,9 @@ class maindart5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-          ),
-        ),
-      ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Basic List Demo'),
+          title: Text('Basic List'),
         ),
         body: Row(
           children: <Widget>[
@@ -67,7 +57,7 @@ class maindart5 extends StatelessWidget {
                           builder: (context) => const maindart6()),
                     );
                   },
-                  child: Text('Следующая страница'),
+                  child: Text('Next'),
                 ),
               ),
             ),

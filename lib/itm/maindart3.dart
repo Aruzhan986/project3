@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_aru2/itm/maindart4.dart';
+import 'package:flutter_aru2/itm/maindart5.dart';
 
 class maindart3 extends StatelessWidget {
   const maindart3({Key? key}) : super(key: key);
@@ -7,16 +7,6 @@ class maindart3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-          ),
-        ),
-      ),
       home: MyHomePage(),
     );
   }
@@ -27,70 +17,68 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App'),
+        title: Text('AlertDialog'),
       ),
-      backgroundColor: Colors.yellow,
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  backgroundColor: Colors.red,
-                  title: Row(
-                    children: [
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color.fromARGB(255, 110, 15, 8),
-                        ),
-                        child: Center(
-                          child: Container(
-                            width: 20,
-                            height: 20,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.red,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      const Text('Sonu Nigam', style: TextStyle(fontSize: 24)),
-                    ],
-                  ),
-                  content: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const maindart4()),
-                          );
-                        },
-                        child: Text('Play'),
-                      ),
-                      const SizedBox(width: 16),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: const Text('Pause'),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
+            _showAlertDialog(context);
           },
-          child: const Text('Music'),
+          child: Text('AlertDialog'),
         ),
       ),
+    );
+  }
+
+  void _showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.red,
+          content: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.album,
+                  color: Colors.white,
+                  size: 48.0,
+                ),
+              ),
+              Flexible(
+                child: Text(
+                  'Son Nigam',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => maindart5()),
+                );
+              },
+              child: Text('Play'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => maindart5()),
+                );
+              },
+              child: Text('Pause'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

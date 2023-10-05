@@ -7,17 +7,6 @@ class maindart6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-          ),
-        ),
-      ),
-      title: 'Kindacode.com',
       home: HobbySelectionScreen(),
     );
   }
@@ -82,24 +71,14 @@ class _HobbySelectionScreenState extends State<HobbySelectionScreen> {
               onChanged: (_) => _toggleHobby('Surfling The Internet'),
             ),
             SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Surfling The Internet'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const maindart7()),
-                    );
-                  },
-                  child: Text('Следующая страница'),
-                ),
-              ],
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const maindart7()),
+                );
+              },
+              child: Text('Next'),
             ),
           ],
         ),

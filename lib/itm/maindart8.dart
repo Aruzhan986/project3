@@ -7,17 +7,6 @@ class maindart8 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-          ),
-        ),
-      ),
-      title: 'Snackbar Example',
       home: MyHomePage(),
     );
   }
@@ -28,12 +17,6 @@ class MyHomePage extends StatelessWidget {
     final snackBar = SnackBar(
       content: Text(message),
       duration: Duration(seconds: 3),
-      action: SnackBarAction(
-        label: 'Закрыть',
-        onPressed: () {
-          ScaffoldMessenger.of(context).hideCurrentSnackBar();
-        },
-      ),
     );
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -56,7 +39,7 @@ class MyHomePage extends StatelessWidget {
               child: Text('Show Snackbar'),
             ),
             SizedBox(
-              height: 10.0,
+              height: 16.0,
             ),
             ElevatedButton(
               onPressed: () {
@@ -65,7 +48,7 @@ class MyHomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => maindart9()),
                 );
               },
-              child: Text('Следующая страница'),
+              child: Text('Next'),
             ),
           ],
         ),

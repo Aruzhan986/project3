@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_aru2/itm/maindart10.dart';
+
+import 'package:flutter_aru2/itm/maindart11.dart';
 
 void main() {
   runApp(maindart9());
@@ -22,19 +23,9 @@ class _MyAppState extends State<maindart9> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-          ),
-        ),
-      ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Bottom Navigation Bar Example'),
+          title: Text('NavigationBar '),
         ),
         body: _screens[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
@@ -76,10 +67,10 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => maindart10()),
+                MaterialPageRoute(builder: (context) => maindart11()),
               );
             },
-            child: Text('Следующая страница'),
+            child: Text('Next'),
           ),
         ],
       ),

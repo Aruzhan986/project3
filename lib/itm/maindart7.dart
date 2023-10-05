@@ -7,17 +7,6 @@ class maindart7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
-          ),
-        ),
-      ),
-      title: 'Kindacode.com',
       home: GenderSelection(),
     );
   }
@@ -66,8 +55,8 @@ class _GenderSelectionState extends State<GenderSelection> {
           SizedBox(height: 20.0),
           Text(
             selectedGender.isEmpty
-                ? 'Выберите гендер'
-                : 'hello $selectedGender',
+                ? 'Choose gender'
+                : 'Your gender is $selectedGender',
             style: TextStyle(fontSize: 16.0),
           ),
           SizedBox(height: 20.0),
@@ -78,7 +67,7 @@ class _GenderSelectionState extends State<GenderSelection> {
                 MaterialPageRoute(builder: (context) => const maindart8()),
               );
             },
-            child: Text('Следующая страница'),
+            child: Text('Next'),
           ),
         ],
       ),
